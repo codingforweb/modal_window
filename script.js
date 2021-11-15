@@ -17,7 +17,7 @@
 // 	}
 // });
 
-let btnShow = document.querySelector('.show-modal');
+let btnShow = document.querySelectorAll('.show-modal'); //querySelectAll returns to me an array with the elements with same classes
 let closeModalBtn = document.getElementById('close_modal_x');
 let modalWindow = document.getElementById('modal_window');
 let modalOverlay = document.getElementById('modal_overlay');
@@ -29,9 +29,13 @@ function addModalWindow() {
 function removeModalWindow() {
   modalWindow.classList.add('hidden');
   modalOverlay.classList.add('hidden');
-} 
+}
 
-btnShow.addEventListener('click', addModalWindow);
+// This Loop Gives to me an option to add an eventlistener to all buttons with the same class
+for (let i = 0; i < btnShow.length; i++) {
+  btnShow[i].addEventListener('click', addModalWindow);
+}
+
 closeModalBtn.addEventListener('click', removeModalWindow);
 modalOverlay.addEventListener('click', removeModalWindow);
 document.addEventListener('keydown', function () {
