@@ -38,8 +38,8 @@ for (let i = 0; i < btnShow.length; i++) {
 
 closeModalBtn.addEventListener('click', removeModalWindow);
 modalOverlay.addEventListener('click', removeModalWindow);
-document.addEventListener('keydown', function () {
-  if (event.key === 'Escape') {
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
     removeModalWindow();
   }
 });
